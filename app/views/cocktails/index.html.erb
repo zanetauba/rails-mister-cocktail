@@ -1,0 +1,19 @@
+
+    <h1>don't be lazy cocktails</h1>
+    <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary btn-lg" %>
+
+
+
+<div id="cocktails">
+  <% @cocktails.each do |cocktail| %>
+      <div class="cocktail">
+    <%= link_to cocktail_path(cocktail) do %>
+
+        <h5 class="text-center"><%= cocktail.name %></h5>
+        <h5>    <%= link_to "Remove a cocktail", cocktail_path(cocktail), method: :delete, class: "btn btn-primary btn" %>
+</h5>
+    <% end %>
+      </div>
+  <% end %>
+
+</div>

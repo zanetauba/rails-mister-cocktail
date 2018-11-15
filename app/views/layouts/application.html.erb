@@ -5,11 +5,66 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_pack_tag    'application', media: 'all' %>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   </head>
 
   <body>
+    <div class="navbar-wagon">
+  <!-- Logo -->
+  <div class="navbar-wagon-left">
+    <a class="navbar-text-brand" href="/">Mrs. Cocktail</a>
+  </div>
+  <!-- Search form -->
+  <div class="search-bar-wrapper hidden-xs hidden-sm">
+    <form class="navbar-wagon-search" action="/cocktails" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+      <i class="fa fa-search"></i>
+      <input type="text" name="search" id="search" class="navbar-wagon-search-input">
+</form>    <!-- <form action="" class="navbar-wagon-search">
+      <i class="fa fa-search"></i>
+      <input type="text" class="navbar-wagon-search-input">
+    </form>
+ -->  </div>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right">
+
+    <!-- Different navigation if login or not -->
+    <div class="nav navbar-nav navbar-right">
+        <a class="navbar-wagon-item navbar-wagon-link" href="/users/sign_up">Sign Up</a>
+        <a class="navbar-wagon-item navbar-wagon-link" href="/users/sign_in">Log In</a>
+
+   </div>
+  </div>
+</div>
     <%= yield %>
+    <footer>
+  <div>
+    <span class="copyright">Made with "love" by Zaneta Uba</span>
+  </div>
+  <div>
+      <ul class="list-inline social-buttons">
+          <li>
+            <a href="https://www.facebook.com/" target="_blank">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <i class="fa fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <i class="fa fa-linkedin"></i>
+            </a>
+          </li>
+      </ul>
+  </div>
+</footer>
+    <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
+    <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
   </body>
 </html>
